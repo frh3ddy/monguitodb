@@ -38,11 +38,11 @@
 exports.MonguitoDB = function(storage, collections) {
     util.validateArguments(arguments, 2, "MonguitoDB()");
     
-    if (storage !== null && !util.isValidStorage(storage)) {
-        throw new TypeError(
-            "MonguitoDB(), invalid arg[0]:storage, expecting storage object."
-        );
-    }
+    // if (storage !== null && !util.isValidStorage(storage)) {
+    //     throw new TypeError(
+    //         "MonguitoDB(), invalid arg[0]:storage, expecting storage object."
+    //     );
+    // }
 
     collections = [].concat(collections);
 
