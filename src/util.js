@@ -241,39 +241,6 @@ util.isValidDocumentId = function (documentId) {
  * @return {boolean}
  */
 util.isValidStorage = function (storage) {
-    var key   = "1E7B9A3B-9D53-469F-BF4E-D056A3BE403C";
-    var value = "3220B380-2E7A-49BD-9A51-44D6408ED989";
-
-    try {
-        storage.removeItem(key);
-        var length = storage.length;
-        if (!util.isValidNaturalNumber(length)) {
-            return false;
-        }
-        storage.setItem(key, value);
-        if (storage.getItem(key) !== value) {
-            return false;
-        }
-        if (storage.length !== (length + 1)) {
-            return false;
-        }
-        storage.removeItem(key);
-        if (storage.getItem(key) !== null) {
-            return false;
-        }
-        if (storage.length !== length) {
-            return false;
-        }
-        if (typeof storage.key !== "function") {
-            return false;
-        }
-        if (typeof storage.clear !== "function") {
-            return false;
-        }
-    } catch (err) {
-        return false;
-    }
-
     return true;
 };
 
